@@ -6,7 +6,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
 const app = (0, express_1.default)();
 app.get('/status', (req, res, next) => {
-    res.status(200).send({ foo: 'bar' });
+    res.status(200).send({ foo: 'sucesso total!' });
 });
 app.listen(3000, () => {
     console.log('Aplicação executando na porta 3000!');
