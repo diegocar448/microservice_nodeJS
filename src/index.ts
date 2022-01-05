@@ -5,7 +5,7 @@ const app = express();
 
 /* parâmetro com a tipagem e vai fazer a requisição*/
 app.get('/status', (req: Request, res: Response, next:NextFunction) => {
-    res.status(200).send({foo: 'sucesso total!'});
+    res.status(200).send({foo: 'sucesso total! agora build with realtime'});
 });
 
 /* Aqui definimos em qual porta será executada o nosso app */
