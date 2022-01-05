@@ -1,5 +1,5 @@
 import { Router, Request, Response,  NextFunction, response } from 'express';
-import statusCode from 'http-status-codes';
+import StatusCodes from 'http-status-codes';
 
 //configuração de rota
 const usersRoute = Router();
@@ -8,8 +8,8 @@ const usersRoute = Router();
 // get/users
 usersRoute.get('/users', (req:Request, res:Response, next:NextFunction) => {
     const users = [{ userName: 'Diego' }];
-    // aqui passamos o statusCode  usando o repositorio (npm install --save 'http-status-code')
-    res.status(statusCode.OK).send( users );
+    // aqui passamos o StatusCodes  usando o repositorio (npm install --save 'http-status-code')
+    res.status(StatusCodes.OK).send( users );
 });
 
 // get /:uuid
@@ -18,12 +18,17 @@ usersRoute.get('/users/:uuid', (req:Request<{ uuid: string }>, res:Response, nex
 
     //aqui pegar o valor passado na url
     const uuid = req.params.uuid;    
-    res.status(statusCode.OK).send({ uuid });
+    res.status(StatusCodes.OK).send({ uuid });
 });
 
 
 
-
+// post /users
+// caso envie os dados em um formato diferente JSON a requisição retornará um json vazio {}
+usersRoute.post('/users', (req:Request, res:Response, next:NextFunction) => {    
+    const newUser = req.body;    
+    res.status(StatusCodes.CREATED).send(newUser);
+});
 
 
 
@@ -31,6 +36,5 @@ usersRoute.get('/users/:uuid', (req:Request<{ uuid: string }>, res:Response, nex
 export default usersRoute;
 
 
-// post /users
 // put /users/:uuid
 // delete /users/:uuid
