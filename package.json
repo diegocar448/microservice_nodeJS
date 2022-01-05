@@ -1,18 +1,21 @@
 {
-  "compilerOptions":{
-    "target": "es2019",
-    "module": "commonjs",
-    "moduleResolution":"node",
-    "rootDir": "src",
-    "typeRoots":[
-      "./src/@types",
-      "./node_modules/@types"
-    ],
-    "outDir": "./dist",
-    "removeComments": true,
-    "esModuleInterop": true,
-    "forceConsistentCasingInFileNames": true,
-    "strict": true,
-    "skipLibCheck": true
+  "name": "ms-authentication",
+  "version": "1.0.0",
+  "description": "Microservice criado durante o live code aprendendo com da DIO",
+  "main": "./dist/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node ./",
+    "build": "tsc -p ."
+  },
+  "author": "Diego Cardoso",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^17.0.8",
+    "typescript": "^4.5.4"
+  },
+  "dependencies": {
+    "@types/express": "^4.17.13",
+    "express": "^4.17.2"
   }
 }
